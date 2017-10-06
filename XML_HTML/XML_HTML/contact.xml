@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContactDB>
+  <VersionDate>11/25/2017</VersionDate>
+  <VersionNumber>1.1.5</VersionNumber>
+  <Contacts sex="M">
+    <firstname>Erik</firstname>
+    <lastname>Johnson</lastname>
+    <phonenumber>555-555-5555</phonenumber>
+    <faxnumber>444-555-6666</faxnumber>
+    <email>erik@johnson.com</email>
+  </Contacts>
+  <Contacts sex="M">
+    <firstname>Bastion</firstname>
+    <lastname>John</lastname>
+    <phonenumber>444-555-5555</phonenumber>
+    <faxnumber>444-777-6666</faxnumber>
+    <email>bastion@john.com</email>
+  </Contacts>
+  <Contacts sex="F">
+    <firstname>Samantha</firstname>
+    <lastname>Johnson</lastname>
+    <phonenumber>555-555-5442</phonenumber>
+    <faxnumber>444-555-6612</faxnumber>
+    <email>Samantha@johnson.com</email>
+  </Contacts>
+  <Contacts sex="F">
+    <firstname>Christina</firstname>
+    <lastname>Smith</lastname>
+    <phonenumber>445-655-5755</phonenumber>
+    <faxnumber>424-535-6456</faxnumber>
+    <email>Christina@smith.com</email>
+  </Contacts>
+  <Contacts sex="M">
+    <firstname>Dennis</firstname>
+    <lastname>McQuaid</lastname>
+    <phonenumber>554-565-7855</phonenumber>
+    <faxnumber>444-585-6123</faxnumber>
+    <email>dennis@McQuaid.com</email>
+  </Contacts>
+</ContactDB>
