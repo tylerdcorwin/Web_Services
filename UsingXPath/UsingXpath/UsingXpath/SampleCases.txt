@@ -1,0 +1,12 @@
+﻿ strExpression = "sum(/bookstore/book/price) div count(/bookstore/book/price)";
+
+            // Use the Evaluate method to return the evaluated expression.
+            Console.WriteLine("The average cost of the books are {0}", nav.Evaluate(strExpression));
+            
+             // Find the title of the books that are greater then $9.00.
+            strExpression = "/bookstore/book/title[../price>9.00]";
+            
+            // Show select children
+            /bookstore/book/author
+            
+            children - first-name
