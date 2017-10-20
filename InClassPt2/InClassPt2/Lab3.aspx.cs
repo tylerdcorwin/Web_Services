@@ -54,7 +54,8 @@ namespace InClassPt2
                 TextBox1.Text += NodeIter.Current.SelectSingleNode("title");
                 TextBox1.Text += "\n";
                 TextBox1.Text += NodeIter.Current.SelectSingleNode("fcttext");
-                TextBox1.Text += "\n";
+                TextBox1.Text += "\n\n";
+                
             }
             /*
             while (NodeIter2.MoveNext())
