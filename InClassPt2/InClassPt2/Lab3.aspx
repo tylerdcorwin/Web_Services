@@ -15,6 +15,16 @@
     
     </div>
         <asp:TextBox ID="TextBox1" runat="server" Height="241px" TextMode="MultiLine" Width="605px"></asp:TextBox>
+        <br />
+        <br />
+        <br />
+        Enter Zip Code&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <br />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Get Cities for Zip Code" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Get Cities Nearby Zip" />
+        <br />
+        <asp:TextBox ID="TextBox3" runat="server" Height="145px" TextMode="MultiLine" Width="374px"></asp:TextBox>
     </form>
 </body>
 </html>

@@ -57,12 +57,84 @@ namespace InClassPt2
                 TextBox1.Text += "\n\n";
                 
             }
-            /*
-            while (NodeIter2.MoveNext())
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //get cities for zip code break on the postal code, then grab from textbox, then start again...
+            HttpWebRequest myHttpWebRequest = null;     //Declare an HTTP-specific implementation of the WebRequest class.
+            HttpWebResponse myHttpWebResponse = null;   //Declare an HTTP-specific implementation of the WebResponse class
+            XmlTextReader myXMLReader = null;           //Declare XMLReader           
+            XPathNavigator nav;
+            XPathDocument docNav;
+            XPathNodeIterator NodeIter;
+            //Create Request 
+
+            String ZipUrl = "http://api.geonames.org/postalCodeSearch?postalcode=" + TextBox2.Text + "&maxRows=10&username=tylerdcorwin";
+
+            myHttpWebRequest = (HttpWebRequest)HttpWebRequest.Create(ZipUrl);
+            myHttpWebRequest.Method = "GET";
+            myHttpWebRequest.ContentType = "text/xml; encoding='utf-8'";
+            //Get Response
+            myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+
+            //Load response stream into XMLReader
+            myXMLReader = new XmlTextReader(myHttpWebResponse.GetResponseStream());
+
+            docNav = new XPathDocument(myXMLReader);
+            // Create a navigator to query with XPath.
+            nav = docNav.CreateNavigator();
+
+            string zipCode = "//code";
+            NodeIter = nav.Select(zipCode);
+
+            while (NodeIter.MoveNext())
             {
-                lbResults.Items.Add(NodeIter2.Current.SelectSingleNode("fcttext").Value);
+                TextBox3.Text += NodeIter.Current.SelectSingleNode("postalcode");
+                TextBox3.Text += "-";
+                TextBox3.Text += NodeIter.Current.SelectSingleNode("name");
+                TextBox3.Text += "\n\n";
+
             }
-            */
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            //get cities nearby zip
+            //get cities for zip code break on the postal code, then grab from textbox, then start again...
+            HttpWebRequest myHttpWebRequest = null;     //Declare an HTTP-specific implementation of the WebRequest class.
+            HttpWebResponse myHttpWebResponse = null;   //Declare an HTTP-specific implementation of the WebResponse class
+            XmlTextReader myXMLReader = null;           //Declare XMLReader           
+            XPathNavigator nav;
+            XPathDocument docNav;
+            XPathNodeIterator NodeIter;
+            //Create Request 
+
+            String ZipUrl = "http://api.geonames.org/findNearbyPostalCodes?postalcode=" + TextBox2.Text + "&country=US&radius=10&username=tylerdcorwin";
+
+            myHttpWebRequest = (HttpWebRequest)HttpWebRequest.Create(ZipUrl);
+            myHttpWebRequest.Method = "GET";
+            myHttpWebRequest.ContentType = "text/xml; encoding='utf-8'";
+            //Get Response
+            myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+
+            //Load response stream into XMLReader
+            myXMLReader = new XmlTextReader(myHttpWebResponse.GetResponseStream());
+
+            docNav = new XPathDocument(myXMLReader);
+            // Create a navigator to query with XPath.
+            nav = docNav.CreateNavigator();
+
+            string zipCode = "//code";
+            NodeIter = nav.Select(zipCode);
+
+            while (NodeIter.MoveNext())
+            {
+                TextBox3.Text += NodeIter.Current.SelectSingleNode("postalcode");
+                TextBox3.Text += "-";
+                TextBox3.Text += NodeIter.Current.SelectSingleNode("name");
+                TextBox3.Text += "\n\n";
+            }
 
         }
     }
