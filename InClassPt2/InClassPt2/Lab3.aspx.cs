@@ -94,7 +94,6 @@ namespace InClassPt2
                 TextBox3.Text += "-";
                 TextBox3.Text += NodeIter.Current.SelectSingleNode("name");
                 TextBox3.Text += "\n\n";
-
             }
         }
 
