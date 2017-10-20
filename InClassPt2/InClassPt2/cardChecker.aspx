@@ -33,6 +33,22 @@
         <br />
         <br />
         <asp:ListBox ID="ListBox1" runat="server" Height="190px" Width="631px"></asp:ListBox>
+        <br />
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            Weather API Calls</p>
+        <p>
+            <asp:Label ID="Label4" runat="server" Text="Weather API Call"></asp:Label>
+            :</p>
+        <p>
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Get Weather in Boston" />
+        </p>
+        <asp:ListBox ID="ListBox2" runat="server" Height="137px" Width="388px"></asp:ListBox>
     </form>
 </body>
 </html>
