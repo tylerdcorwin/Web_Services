@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ExceptionExample.MathException" CodeBehind="MathException.svc.cs" %>

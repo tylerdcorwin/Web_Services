@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prob1(try2)", "prob1(try2)\prob1(try2).csproj", "{E819DAC9-F393-408D-B321-4B5AA4BA6FCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "footballWCF", "footballWCF\footballWCF.csproj", "{3BDE2A3F-2468-406B-BC78-E3783221C3C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E819DAC9-F393-408D-B321-4B5AA4BA6FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E819DAC9-F393-408D-B321-4B5AA4BA6FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E819DAC9-F393-408D-B321-4B5AA4BA6FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E819DAC9-F393-408D-B321-4B5AA4BA6FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BDE2A3F-2468-406B-BC78-E3783221C3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BDE2A3F-2468-406B-BC78-E3783221C3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BDE2A3F-2468-406B-BC78-E3783221C3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BDE2A3F-2468-406B-BC78-E3783221C3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
