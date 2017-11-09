@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Problem1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Problem1_WebReference_BankingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://34.229.220.156/BankingService/Bankservice.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
