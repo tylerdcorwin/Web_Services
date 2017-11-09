@@ -40,7 +40,8 @@ namespace Lab2
             string shippingInfo = "//ShippingInformation";
             NodeIterShipping = nav.Select(shippingInfo);
             string itemInfo = "//Item";
-            NodeIterItems = nav.Select(itemInfo);             
+            NodeIterItems = nav.Select(itemInfo);  
+            //TEST           
             
             //show
             while (NodeIterBilling.MoveNext())
