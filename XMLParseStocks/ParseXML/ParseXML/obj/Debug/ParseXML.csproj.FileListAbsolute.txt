@@ -1,8 +1,0 @@
-C:\Users\001131100\Desktop\Web_Services\Web_Services\XMLParseStocks\ParseXML\ParseXML\bin\Debug\ParseXML.exe.config
-C:\Users\001131100\Desktop\Web_Services\Web_Services\XMLParseStocks\ParseXML\ParseXML\bin\Debug\ParseXML.exe
-C:\Users\001131100\Desktop\Web_Services\Web_Services\XMLParseStocks\ParseXML\ParseXML\bin\Debug\ParseXML.pdb
-C:\Users\001131100\Desktop\Web_Services\Web_Services\XMLParseStocks\ParseXML\ParseXML\obj\Debug\ParseXML.Form1.resources
-C:\Users\001131100\Desktop\Web_Services\Web_Services\XMLParseStocks\ParseXML\ParseXML\obj\Debug\ParseXML.Properties.Resources.resources
-C:\Users\001131100\Desktop\Web_Services\Web_Services\XMLParseStocks\ParseXML\ParseXML\obj\Debug\ParseXML.csproj.GenerateResource.Cache
-C:\Users\001131100\Desktop\Web_Services\Web_Services\XMLParseStocks\ParseXML\ParseXML\obj\Debug\ParseXML.exe
-C:\Users\001131100\Desktop\Web_Services\Web_Services\XMLParseStocks\ParseXML\ParseXML\obj\Debug\ParseXML.pdb
