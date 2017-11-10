@@ -16,9 +16,16 @@ namespace ConsoleApplication1
 
             Console.WriteLine("Bank Account ID: " + myProxy.GetBankInformation("12345").accountID);
             Console.WriteLine("Bank Account name: " + myProxy.GetBankInformation("12345").accountName);
+            Console.WriteLine("");
+            Console.WriteLine("----- Bank Account 1 ------");
             Console.WriteLine("Account Type: " + myProxy.GetBankInformation("12345").account[0].accountType);
             Console.WriteLine("Free Checking: " + myProxy.GetBankInformation("12345").account[0].options.FreeChecking);
             Console.WriteLine("Overdraft Protection: " + myProxy.GetBankInformation("12345").account[0].options.OverDraftProtection);
+            Console.WriteLine("");
+            Console.WriteLine("----- Bank Account 2 ------");
+            Console.WriteLine("Account Type: " + myProxy.GetBankInformation("12345").account[1].accountType);
+            Console.WriteLine("Free Checking: " + myProxy.GetBankInformation("12345").account[1].options.FreeChecking);
+            Console.WriteLine("Overdraft Protection: " + myProxy.GetBankInformation("12345").account[1].options.OverDraftProtection);
 
             Console.WriteLine();
             Console.WriteLine("Hit ENTER to exit");
