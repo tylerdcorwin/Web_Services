@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title></title>
+
+
+
+  
+<script type="text/javascript">
+	
+function myFunct(){
+	var stateCheck = myForm.state.value;
+	var url = 'http://carma.org/api/1.1/searchLocations?name=' + stateCheck;
+	alert(url);
+	// Cross platform xmlhttprequest
+	//http://api.wunderground.com/api/a07fc64fa2c0560a/forecast/q/MA/Boston.json
+	// Create xmlhttprequest object
+	var xmlhttp = null;
+	if (window.XMLHttpRequest) {
+			xmlhttp = new XMLHttpRequest();
+			//make sure that Browser supports overrideMimeType
+			if ( typeof xmlhttp.overrideMimeType != 'undefined') { xmlhttp.overrideMimeType('text/xml'); }
+		} else if (window.ActiveXObject) {
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}  else {
+			alert('Perhaps your browser does not support xmlhttprequests?');
+		}
+
+	// Create an HTTP GET request
+	xmlhttp.open('GET', url, true);
+
+	// Set the callback function
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			//added in class
+			var myObj = JSON.parse(xmlhttp.responseText);		
+			
+			myForm.name.value = myObj[0].name;
+			myForm.plantCnt.value = myObj[0].plant_count;
+			myForm.carPast.value = myObj[0].carbon.past;
+			myForm.carPres.value = myObj[0].carbon.present;
+			myForm.carFut.value = myObj[0].carbon.future;			
+			
+		}
+		else {
+        // waiting for the call to complete
+		//shows all processes not used in production!
+		//alert(xmlhttp.readyState);
+		
+		}
+	}
+	// Make the actual request
+	xmlhttp.send(null);
+};
+
+
+
+</script>
+</head>
+<body>
+	<form name="myForm">
+		<h3>JSON web service</h3>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="name"></td>		
+			</tr>
+			<tr>
+				<td>Plant Count:</td>
+				<td><input type="text" name="plantCnt"></td>		
+			</tr>
+			<tr>
+				<td>Carbon Past:</td>
+				<td><input type="text" name="carPast"></td>		
+			</tr>
+			<tr>
+				<td>Carbon Present:</td>
+				<td><input type="text" name="carPres"></td>		
+			</tr>
+			<tr>
+				<td>Carbon Future:</td>
+				<td><input type="text" name="carFut"></td>		
+			</tr>
+			<tr>
+				<td>Enter State Name:</td>
+				<td><input type="text" name="state"></td>		
+			</tr>
+		</table>
+		<button type="button" onclick="myFunct()" class="btn">Get Data</button>
+	</form>
+</BODY>
+</html>

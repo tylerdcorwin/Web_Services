@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title></title>
+
+
+
+  
+<script type="text/javascript">
+
+
+var url = 'http://api.wunderground.com/api/a07fc64fa2c0560a/conditions/q/MA/Boston.json';
+// Cross platform xmlhttprequest
+//http://api.wunderground.com/api/a07fc64fa2c0560a/forecast/q/MA/Boston.json
+// Create xmlhttprequest object
+var xmlhttp = null;
+if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+        //make sure that Browser supports overrideMimeType
+        if ( typeof xmlhttp.overrideMimeType != 'undefined') { xmlhttp.overrideMimeType('text/xml'); }
+} else if (window.ActiveXObject) {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}  else {
+        alert('Perhaps your browser does not support xmlhttprequests?');
+}
+
+// Create an HTTP GET request
+xmlhttp.open('GET', url, true);
+
+// Set the callback function
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		//added in class
+		var myObj = JSON.parse(xmlhttp.responseText);		
+		myForm.tempC.value = myObj.current_observation.feelslike_c;
+		myForm.tempF.value = myObj.current_observation.feelslike_f;
+	}
+    else {
+        // waiting for the call to complete
+		//shows all processes not used in production!
+		//alert(xmlhttp.readyState);
+		
+    }
+};
+
+// Make the actual request
+xmlhttp.send(null);
+
+</script>
+</head>
+<body>
+	<form name="myForm">
+		<h3>JSON web service</h3>
+		<table>
+			<tr>
+				<td>Temp in Centigrade</td>
+				<td><input type="text" name="tempC"></td>		
+			</tr>
+			<tr>
+				<td>Temp in Fahrenheit</td>
+				<td><input type="text" name="tempF"></td>		
+			</tr>
+		</table>
+	</form>
+</BODY>
+</html>
