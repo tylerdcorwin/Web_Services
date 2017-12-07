@@ -21,14 +21,14 @@ namespace SnowReporter
         }
         protected void SendMessage_OnClick(object sender, EventArgs e)
         {
-            const string accountSid = "AC1aea9d222ae314d10dfde35c6369c189";
-            const string authToken = "f5edc8b98a6c3175aea89f29394274cd";
+            const string accountSid = "XXXXXX";
+            const string authToken = "XXXXX";
             TwilioClient.Init(accountSid, authToken);
 
-            var to = new PhoneNumber("+14017148826"); //This will be from txt box with augmentation
+            var to = new PhoneNumber("+XXXX"); //This will be from txt box with augmentation
             var message = MessageResource.Create(to,
-                                                 //+15005550006  +17748723011
-                                                 from: new PhoneNumber("+17748723011"),
+                                                 //+xxxx  +XXXX
+                                                 from: new PhoneNumber("+XXXXX"),
                                                  body: "Testing this out");
             Console.WriteLine(message.Sid);
         }
