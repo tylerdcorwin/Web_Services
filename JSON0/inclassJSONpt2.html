@@ -3,14 +3,14 @@
 <head>
 <title></title>
 
-<!-- http://api.geonames.org/postalCodeSearchJSON?postalcode='+ myForm.enteredname.value + '&maxRows=10&username=btcneit' -->
-<!-- http://api.geonames.org/postalCodeSearchJSON?formatted=true&postalcode=9011&maxRows=10&username=tylerdcorwin&style=full -->
 
+
+  
 <script type="text/javascript">
-
+	
 function myFunct(){
-	var zip = myForm.zip.value;
-	var url = 'http://api.geonames.org/postalCodeSearchJSON?formatted=true&postalcode='+ zip + '&maxRows=10&username=tylerdcorwin&style=full';
+	var stateCheck = myForm.state.value;
+	var url = 'http://carma.org/api/1.1/searchLocations?name=' + stateCheck;
 	alert(url);
 	// Cross platform xmlhttprequest
 	//http://api.wunderground.com/api/a07fc64fa2c0560a/forecast/q/MA/Boston.json
@@ -33,28 +33,23 @@ function myFunct(){
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			//added in class
-			var myObj = JSON.parse(xmlhttp.responseText);
-			document.getElementById("demo").innerHTML = myObj.OwnerName ;
-
-			// debugger;
-      // for (var i = 0; i < myObj.postalCodes.length ; i++){
-      //   document.write("<p>");
-      //   document.write(myObj.postalCodes[i].adminName2);
-      //   document.write("</p>");
-      // }
-
-
-
+			var myObj = JSON.parse(xmlhttp.responseText);		
+			
+			myForm.name.value = myObj[0].name;
+			myForm.plantCnt.value = myObj[0].plant_count;
+			myForm.carPast.value = myObj[0].carbon.past;
+			myForm.carPres.value = myObj[0].carbon.present;
+			myForm.carFut.value = myObj[0].carbon.future;			
+			
 		}
 		else {
         // waiting for the call to complete
 		//shows all processes not used in production!
 		//alert(xmlhttp.readyState);
-
+		
 		}
 	}
 	// Make the actual request
-	xmlhttp.open("GET", "json_demo.txt", true);
 	xmlhttp.send(null);
 };
 
@@ -65,15 +60,33 @@ function myFunct(){
 <body>
 	<form name="myForm">
 		<h3>JSON web service</h3>
-		<p id="demo">Owner: </p>
 		<table>
 			<tr>
-				<td>ZipCode:</td>
-				<td><input type="text" name="zip"></td>
+				<td>Name:</td>
+				<td><input type="text" name="name"></td>		
+			</tr>
+			<tr>
+				<td>Plant Count:</td>
+				<td><input type="text" name="plantCnt"></td>		
+			</tr>
+			<tr>
+				<td>Carbon Past:</td>
+				<td><input type="text" name="carPast"></td>		
+			</tr>
+			<tr>
+				<td>Carbon Present:</td>
+				<td><input type="text" name="carPres"></td>		
+			</tr>
+			<tr>
+				<td>Carbon Future:</td>
+				<td><input type="text" name="carFut"></td>		
+			</tr>
+			<tr>
+				<td>Enter State Name:</td>
+				<td><input type="text" name="state"></td>		
 			</tr>
 		</table>
 		<button type="button" onclick="myFunct()" class="btn">Get Data</button>
-
 	</form>
 </BODY>
 </html>

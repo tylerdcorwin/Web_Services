@@ -9,12 +9,8 @@
 <script type="text/javascript">
 
 function myFunct(){
-	var zip = myForm.zip.value;
-	var url = 'http://api.geonames.org/postalCodeSearchJSON?formatted=true&postalcode='+ zip + '&maxRows=10&username=tylerdcorwin&style=full';
-	alert(url);
-	// Cross platform xmlhttprequest
-	//http://api.wunderground.com/api/a07fc64fa2c0560a/forecast/q/MA/Boston.json
-	// Create xmlhttprequest object
+	var url = 'http://34.229.220.156/jsonbankservice/BankAccounts/GetBankInformation';
+	//alert(url);
 	var xmlhttp = null;
 	if (window.XMLHttpRequest) {
 			xmlhttp = new XMLHttpRequest();
@@ -32,20 +28,30 @@ function myFunct(){
 	// Set the callback function
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			//added in class
 			var myObj = JSON.parse(xmlhttp.responseText);
-			document.getElementById("demo").innerHTML = myObj.OwnerName ;
+      //debugger;
+			document.write("<p>Owner:");
+			document.write(myObj.OwnerName);
+			document.write("</p>");
+			document.write("<p>Account ID:");
+			document.write(myObj.AccountID);
+			document.write("</p>");
+			document.write("<p>TotalAmount:");
+			debugger;
+			var total, test = 0;
+      for (var i = 0; i < myObj.accounts.length ; i++){
+				total = myObj.accounts[i].Amount;
+				var sum;
+				sum = parseFloat(total);
+				test += sum;
+			}
+				 document.write(test);
+        document.write("</p>");
+      }
 
-			// debugger;
-      // for (var i = 0; i < myObj.postalCodes.length ; i++){
-      //   document.write("<p>");
-      //   document.write(myObj.postalCodes[i].adminName2);
-      //   document.write("</p>");
-      // }
 
 
 
-		}
 		else {
         // waiting for the call to complete
 		//shows all processes not used in production!
@@ -54,7 +60,6 @@ function myFunct(){
 		}
 	}
 	// Make the actual request
-	xmlhttp.open("GET", "json_demo.txt", true);
 	xmlhttp.send(null);
 };
 
@@ -65,11 +70,15 @@ function myFunct(){
 <body>
 	<form name="myForm">
 		<h3>JSON web service</h3>
-		<p id="demo">Owner: </p>
 		<table>
 			<tr>
-				<td>ZipCode:</td>
-				<td><input type="text" name="zip"></td>
+				<td>Owner:</td>
+				<td><input type="text" name="owner"></td>
+				<td>Account Id</td>
+				<td><input type="text" name="accnt"></td>
+				<td>Total Amount</td>
+				<td><input type="text" name="total"></td>
+
 			</tr>
 		</table>
 		<button type="button" onclick="myFunct()" class="btn">Get Data</button>
